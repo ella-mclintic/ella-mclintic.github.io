@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title for the page -->
+    <title>Document</title>
+
+    <!-- Link to my style sheet -->
+    <link rel="stylesheet" href="index2.css">
+
+    <!--The next three lines allow the Vega embed-->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+</head>
+
+
+
+<body>
+    <!-- A div that contains a group of items for week 1. Can be useful for setting background colours etc.  -->
+    <div class="myWeek1">
+        <h1>Data Science for Economists.</h1>
+        
+        <h2>Week 1</h2>
+
+        <h3>Covid-19</h3>
+        <p>The first chart tracks Covid-19 cases by UK region.</p>
+        <div class="chart" id="Chart1"></div>
+
+        <h3>Productivity puzzle</h3>
+        <p>My second chart looks at productivity in the UK</p>
+        <div class="chart" id="Chart2"> </div>
+
+        <h3>Inflation official target</h3>
+        <p>My third chart shows the official target for inflation, using CPI % change over 12 months</p>
+        <div class="chart" id="Chart3"> </div>
+
+        <h3>Gross domestic product (GDP)</h3>
+        <p>The fourth chart shows GDP at market prices (£millions), from 2006 to 2022 </p>
+        <div class="chart" id="Chart4"> </div>
+
+        <h2>Week 2</h2>
+
+        <h3>IMF Outstanding Lending</h3>
+        <p>The fifth chart shows Outstanding IMF lending (£billions), from the years 1984 to 2022 </p>
+        <div class="chart" id="Chart5"> </div>
+
+        <h3>Fixed IMF Outstanding Lending</h3>
+        <p>The fifth chart shows Outstanding IMF lending, divided through by world GDP, for the years 1984 to 2021 </p>
+        <div class="chart" id="Chart6"> </div>
+        <p>Between those years there are four distinct peaks where lending increases quickly; these are 1984, 1998, 2011 and 2020. Lending is most risky in 1984.</p>
+
+        <h2>Week 3</h2>
+
+        <h3>COVID-19 Deaths vs People Vaccinated United States</h3>
+        <p>This graph shows the total COVID-19 deaths per million, against people fully vaccinated between December 2020 and January 2023</p>
+        <div class="chart" id="Chart7"> </div>
+
+        <h3>COVID-19 New Deaths vs People Vaccinated United States</h3>
+        <p>This graph shows the new COVID-19 deaths, against people fully vaccinated between December 2020 and January 2023</p>
+        <div class="chart" id="Chart8"> </div>
+        <p>This shows new COVID-19 deaths instead of total deaths. The data is more variable and an area mark type shows the time trends better.</p>
+
+        <h2>Week 4</h2>
+
+        <h3>CPI Weights by Subgroup</h3>
+        <p>(2019 - 2020 Weights). Relative importance of components in the Consumer Price Indexes: U.S. city average, December 2021 </p>
+        <p> <a href="https://colab.research.google.com/drive/1iVXFREHZYDfblVG6MdRRd-iknLfg7HNc?usp=sharing" id="link6">link to BLS table scraper google sheet</a> </p>
+        <div class="chart" id="Chart9"> </div>
+        <p>I chose to scrape this site as I wanted a better understanding of what was causing inflation in the US.</p>
+
+        <h2>Week 5</h2>
+
+        <h3>ONS API Dahsboard</h3>
+        <p> <a href="https://colab.research.google.com/drive/1myQI2a8pBaCeYoPARgOVkXxkusXgPcxp?usp=sharing" id="link7">link to BLS table scraper google sheet</a> </p>
+        <div class="chart" id="Chart10"> </div>
+
+        <h2>Week 6 - No homework!</h2>
+
+        <h2>Week 7</h2>
+
+        <h3>Interactive Unemployment Rate Map</h3>
+        <div class="chart" id="Chart11"></div>
+        <p>Map 1 is a base map for Africa. Map 2 shows the unemployment rate for each country in 2022 using data scraped from the ILO.</p>
+
+        <h2>Week 8 - Festival of Economics</h2>
+
+        <h2>Week 9</h2>
+
+        <h3>Extent of Chinese Economic Influence in Africa vs Is Influence Positive or Negative</h3>
+        <p>This chart is a scatterplot of the mean answers, by country, to a survey conducted by Afrobarometer. Sample size for each country is shown by the bubble size and an orange gradient scale; the larger the sample size, the darker the shade of orange. The 'Positive/Negative' score is regressed on the 'Extent of Economic Influence' score, producing a linear regression line and an R^2 value of 0.46. A tooltip is added so readers can see the Country pertaining to each bubble, and the actual values of x and y.</p>
+        <div class="chart" id="Chart12"> </div>
+
+        <h3>Dashboard: Distributions of Positive/Negative Scores in Survey (by Country, 2016)</h3>
+        <p>Histograms showing the binned answers to the survey, by Country</p>
+        <div class="chart" id="Chart13"> </div>
+
+
+        
+    </div>
+    
+</body>
+
+
+
+
+<script>
+    //Define charts:
+    var myChart1 = "chart1_covidUKRegions.json";
+    var myChart2 = "chart2_ukProductivity.json";
+    var myChart3 = "chart3.json";
+    var myChart4 = "chart4.json";
+    var myChart5 = "IMF_outstanding_lending.json";
+    var myChart6 = 'IMF_lending_byGDP.json';
+    var myChart7 = "COVID_OWID.json";
+    var myChart8 = "COVID_OWID2.json";
+    var myChart9 = "CPI_BSL_scraper.json";
+    var myChart10 = "dashboard_ONS2.json";
+    var myChart11 = "GEOJSON_africa2.json";
+    var myChart12 = "AFRICA_SCATTER_2016.json";
+    var myChart13 = "AFRICA_DISTRIBUTIONS.json";
+    var myChart14 = "environmental_expenditure_chart.json";
+    var myChart15 = "output_per_worker.json";
+
+    // Embed charts:
+    vegaEmbed('#Chart1', myChart1);
+    vegaEmbed('#Chart2', myChart2);
+    vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);
+    vegaEmbed('#Chart5', myChart5);
+    vegaEmbed('#Chart6', myChart6);
+    vegaEmbed('#Chart7', myChart7);
+    vegaEmbed('#Chart8', myChart8);
+    vegaEmbed('#Chart9', myChart9);
+    vegaEmbed('#Chart10', myChart10);
+    vegaEmbed('#Chart11', myChart11);
+    vegaEmbed('#Chart12', myChart12);
+    vegaEmbed('#Chart13', myChart13);
+    vegaEmbed('#Chart14', myChart14);
+    vegaEmbed('#Chart15', myChart15);
+</script>
+
+</html>
+
+
