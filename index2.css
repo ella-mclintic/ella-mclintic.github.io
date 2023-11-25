@@ -1,0 +1,283 @@
+/* Richard Davies, Data Science for Economists */
+
+/* This is my second first proper css file */
+
+
+/* Import a font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+
+/* Set the background color for my page: */
+body{
+    background-color: rgb(179, 222, 255);
+    
+
+ 
+}
+
+.wrap{background-color:rgb(255, 255, 255);
+    width: 700px;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(47, 117, 202)
+
+}
+
+a{border-width: 50px;
+width: fit-content;
+border-style: solid;
+border-radius: 5px;
+border-color: black;
+
+margin: 20px;
+}
+
+/*BUTTONS*/
+
+#link1{
+
+    padding: 10px;
+
+    background-color:rgb(12, 59, 116);
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color:gray;
+
+    font-weight: 700;
+    color:rgb(255, 255, 255)
+
+}
+
+#link1:hover{
+
+    background-color: rgb(12, 59, 116);
+
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+#link2{
+
+    padding: 10px;
+
+    background-color:rgb(12, 59, 116);
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color:gray;
+
+    font-weight: 700;
+    color:rgb(255, 255, 255)
+
+}
+
+#link2:hover{
+
+    background-color: rgb(12, 59, 116);
+
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+#link3{
+
+    padding: 10px;
+
+    background-color:rgb(12, 59, 116);
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color:gray;
+
+    font-weight: 700;
+    color:rgb(255, 255, 255)
+
+}
+
+#link3:hover{
+
+    background-color: rgb(12, 59, 116);
+
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+#link4{
+
+    padding: 10px;
+
+    background-color:rgb(12, 59, 116);
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color:gray;
+
+    font-weight: 700;
+    color:rgb(255, 255, 255)
+
+}
+
+#link4:hover{
+
+    background-color: rgb(12, 59, 116);
+
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+#link5{
+
+    padding: 10px;
+
+    background-color:rgb(12, 59, 116);
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color:gray;
+
+    font-weight: 700;
+    color:rgb(255, 255, 255)
+
+}
+
+#link5:hover{
+
+    background-color: rgb(12, 59, 116);
+
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+#link6{
+
+    padding: 10px;
+
+    background-color:rgb(12, 59, 116);
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color:gray;
+
+    font-weight: 700;
+    color:rgb(255, 255, 255)
+
+}
+
+#link6:hover{
+
+    background-color: rgb(12, 59, 116);
+
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+#link7{
+
+    padding: 10px;
+
+    background-color:rgb(12, 59, 116);
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color:gray;
+
+    font-weight: 700;
+    color:rgb(255, 255, 255)
+
+}
+
+#link7:hover{
+
+    background-color: rgb(12, 59, 116);
+
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+#link8{
+
+    padding: 10px;
+
+    background-color:rgb(12, 59, 116);
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color:gray;
+
+    font-weight: 700;
+    color:rgb(255, 255, 255)
+
+}
+
+#link8:hover{
+
+    background-color: rgb(12, 59, 116);
+
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+
+
+/* Choose the appearance of the tags, h1, h3 and p: */
+h1, h2, h3, p{
+    color:rgb(17, 17, 17);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 10px 10px;
+}
+    
+.myWeek1{
+   
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    width: 800px;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(47, 117, 202)
+}
+
+
+/* Set the apperance of the class, chart */
+.chart{
+    align-items: center;
+    margin: 5px 5px;
+    background-color: rgb(255, 255, 255);
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgb(47, 117, 202);
+    
+
+    
+}
+ 
+/* Set the apperance of the class, chart */
+#Chart1{
+    border-color: rgb(47, 117, 202);
+
+}
+
+/* imported font for google */ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap') 
+

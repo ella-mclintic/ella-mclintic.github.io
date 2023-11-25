@@ -1,0 +1,63 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 550,
+    "height": 400,
+    "view": {"stroke": "transparent"},
+    "title": {
+      "text": "COVID-19 Death Rate, 2021 - by Country",
+      "fontSize": 12,
+      "subtitle": ["Monthly Average, Per 1000 Population, Outliers Removed", ""],
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "middle"
+    },
+    "params": [
+      {
+        "name": "yearSelector",
+        "value": 1,
+        "bind": {
+          "input": "range",
+          "min": 1,
+          "max": 12,
+          "step": 1,
+          "name": "month:"
+        }
+      }
+    ],
+    "data": {
+      "url": "https://raw.githubusercontent.com/ella-mclintic/exeter/main/death_rate_nooutliers_baseyear.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {"filter": "datum.month == yearSelector"},
+      {
+        "lookup": "country",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json",
+            "format": {"property": "features"}
+          },
+          "key": "properties.name",
+          "fields": ["properties", "type", "geometry"]
+        }
+      }
+    ],
+    "projection": {"type": "mercator"},
+    "mark": "geoshape",
+    "encoding": {
+      "color": {
+        "field": "death_rate",
+        "legend": {
+          "title": "Death Rate",
+          "orient": "right",
+          "direction": "vertical"
+        },
+        "type": "quantitative",
+        "scale": {"scheme": "reds"}
+      },
+      "tooltip": [
+        {"field": "properties.name", "title": "Country"},
+        {"field": "death_rate", "title": "Death Rate", "format": ""}
+      ]
+    }
+  }
