@@ -1,49 +1,49 @@
-"country","life_expect","year"
-"manage physical health",1.99814126394052,1955
-"manage physical health",1.99721189591078,2000
-"manage mental health",1.44981412639405,1955
-"manage mental health",1.69981412639405,2000
-"manage panic attacks",1.1868029739777,1955
-"manage panic attacks",1.72118959107807,2000
-"manage suicidal thoughts",2.42472118959108,1955
-"manage suicidal thoughts",2.54832713754647,2000
-"healthy choices",1.80855018587361,1955
-"healthy choices",1.96840148698885,2000
-"safe home",2.89869888475836,1955
-"safe home",2.88197026022305,2000
-"look after children",2.89869888475836,1955
-"look after children",2.88197026022305,2000
-"new skills",2.03903345724907,1955
-"new skills",2.11988847583643,2000
-"voluntary work",2.09944237918216,1955
-"voluntary work",2.21096654275093,2000
-"alcohol",2.70539033457249,1955
-"alcohol",2.71282527881041,2000
-"non prescription drugs",2.81877323420074,1955
-"non prescription drugs",2.72490706319703,2000
-"positive future",1.31412639405204,1955
-"positive future",1.72397769516729,2000
-"not to blame",1.26672862453532,1955
-"not to blame",2.05576208178439,2000
-"say no",1.48327137546468,1955
-"say no",1.88940520446097,2000
-"respect myself",1.10687732342007,1955
-"respect myself",1.65055762081784,2000
-"personal safety",1.88568773234201,1955
-"personal safety",2.04739776951673,2000
-"like myself",1.00836431226766,1955
-"like myself",1.4814126394052,2000
-"support from family",1.9135687732342,1955
-"support from family",1.93587360594796,2000
-"support from friends",1.78066914498141,1955
-"support from friends",1.56226765799256,2000
-"part of community",1.35130111524164,1955
-"part of community",1.5092936802974,2000
-"confident on streets",1.60966542750929,1955
-"confident on streets",1.6496282527881,2000
-"safe place to live",2.71003717472119,1955
-"safe place to live",2.75650557620818,2000
-"enough money",2.32342007434944,1955
-"enough money",2.2407063197026,2000
-"benefits",2.69516728624535,1955
-"benefits",2.57806691449814,2000
+country,life_expect,year
+alcohol,2.712825279,after
+alcohol,2.705390335,before
+benefits,2.578066914,after
+benefits,2.695167286,before
+confident on streets,1.609665428,before
+confident on streets,1.649628253,after
+enough money,2.24070632,after
+enough money,2.323420074,before
+healthy choices,1.808550186,before
+healthy choices,1.968401487,after
+like myself,1.008364312,before
+like myself,1.481412639,after
+look after children,2.88197026,after
+look after children,2.898698885,before
+manage mental health,1.449814126,before
+manage mental health,1.699814126,after
+manage panic attacks,1.186802974,before
+manage panic attacks,1.721189591,after
+manage physical health,1.998141264,before
+manage physical health,1.997211896,after
+manage suicidal thoughts,2.42472119,before
+manage suicidal thoughts,2.548327138,after
+new skills,2.039033457,before
+new skills,2.119888476,after
+non prescription drugs,2.724907063,after
+non prescription drugs,2.818773234,before
+not to blame,2.055762082,after
+not to blame,1.266728625,before
+part of community,1.351301115,before
+part of community,1.50929368,after
+personal safety,2.04739777,after
+personal safety,1.885687732,before
+positive future,1.314126394,before
+positive future,1.723977695,after
+respect myself,1.106877323,before
+respect myself,1.650557621,after
+safe home,2.88197026,after
+safe home,2.898698885,before
+safe place to live,2.756505576,after
+safe place to live,2.710037175,before
+say no,1.483271375,before
+say no,1.889405204,after
+support from family,1.935873606,after
+support from family,1.913568773,before
+support from friends,1.780669145,before
+support from friends,1.562267658,after
+voluntary work,2.099442379,before
+voluntary work,2.210966543,after
