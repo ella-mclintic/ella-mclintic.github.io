@@ -1,0 +1,64 @@
+/* Importing font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* General body styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9; /* Light grayish-purple background for contrast */
+    color: #333; /* Dark grey for text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for each week */
+.myWeek1 {
+    background-color: #ffffff; /* White background for the container */
+    margin: 20px auto;
+    width: 95%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for modern look */
+    padding: 20px;
+    border: 1px solid #e1e1e8; /* Light border for definition */
+}
+
+/* Styling for charts */
+.chart {
+    background-color: #fafafa; /* Very light grey background for charts */
+    border: 1px solid #d3d3e2; /* Light purple border */
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Header styles */
+h1, h2, h3 {
+    text-align: center;
+    color: #5d5475; /* Dark purple for headers */
+}
+
+/* Link styles */
+a {
+    color: #8559a5; /* Purple text for links */
+    text-decoration: none; /* No underline */
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover for interactivity */
+}
+
+/* Button styling */
+.button {
+    background-color: #6c63ff; /* Brighter purple for buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #5a54c4; /* Darker purple on hover */
+}
