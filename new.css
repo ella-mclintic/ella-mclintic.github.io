@@ -1,0 +1,81 @@
+/* Richard Davies, Data Science for Economists */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/* Main body styles */
+body {
+    background-color: #f4f1ff; /* Lighter purple background */
+    font-family: 'Poppins', sans-serif; /* Consistent font usage */
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    background-color: #ffffff;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 10px solid #5a189a; /* Dark purple border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    background-color: #9d4edd; /* Purple background */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #7b2cbf;
+}
+
+a:hover {
+    background-color: #7b2cbf; /* Darker purple on hover */
+}
+
+/* Style for headers and paragraphs */
+h1, h2, h3, p {
+    color: #1a0547; /* Dark purple text */
+    text-align: center;
+    margin: 10px;
+}
+
+/* Class for weekly sections */
+.myWeek1 {
+    background-color: #ffffff;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 4px solid #5a189a;
+    border-radius: 10px;
+}
+
+/* Styles for charts */
+.chart {
+    margin: 20px auto;
+    background-color: #e0d4fd; /* Very light purple */
+    border: 4px solid #5a189a;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+/* Button styles */
+[id^="link"] {
+    padding: 10px;
+    background-color: #9d4edd;
+    border: 2px solid #5a189a;
+    font-weight: bold;
+}
+
+[id^="link"]:hover {
+    background-color: #7b2cbf;
+    border-color: #4a148c;
+}
+
+/* Set specific charts' borders */
+#Chart1, #Chart2, #Chart3, #Chart4, #Chart5, #Chart6, #Chart7, #Chart8, #Chart9, #Chart10, #Chart11, #Chart12, #Chart13 {
+    border-color: #5a189a;
+}
