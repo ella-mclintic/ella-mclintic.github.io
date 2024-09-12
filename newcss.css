@@ -1,0 +1,76 @@
+/* Import fonts and basic reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f2f8;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Sidebar styling */
+.sidebar {
+    background-color: #4b3f72;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    width: 250px;
+    padding: 20px;
+}
+
+.sidebar a {
+    color: #ffffff;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #372948;
+}
+
+/* Main content area */
+.main-content {
+    margin-left: 250px; /* same as sidebar width */
+    padding: 20px;
+}
+
+/* Grid layout for charts */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.chart {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Heading styles */
+h1, h2, h3 {
+    color: #4b3f72; /* purple shade */
+}
+
+/* Button styles */
+.button {
+    background-color: #673ab7; /* purple */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #5e35b1; /* darker purple */
+}
