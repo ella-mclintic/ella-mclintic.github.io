@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Dashboard</h1>
+        <a href="#Week1">Week 1</a>
+        <a href="#Week2">Week 2</a>
+        <a href="#Week3">Week 3</a>
+        <!-- Continue for all weeks -->
+    </div>
+    <div class="main-content">
+        <div class="grid">
+            <!-- Charts can be added here -->
+            <div class="chart" id="Chart1">Chart 1</div>
+            <div class="chart" id="Chart2">Chart 2</div>
+            <!-- Add more charts as needed -->
+        </div>
+    </div>
+
+    <script>
+        // Vega embed scripts as before
+        vegaEmbed('#Chart1', myChart1);
+        vegaEmbed('#Chart2', myChart2);
+        // Continue for all charts
+    </script>
+</body>
+</html>
