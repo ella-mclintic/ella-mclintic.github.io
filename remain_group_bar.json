@@ -73,8 +73,8 @@
         "format": ".0%"
       }
     },
-    "width": 300,
-    "height": 500,
+    "width": 280,
+    "height": 300,
     "title": {
       "text": "Staying on Waiting List by Interest in Groups",
       "subtitle": "Percentage response for 'remain', by whether individual is interest in group work.",

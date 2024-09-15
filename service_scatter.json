@@ -12,8 +12,8 @@
     "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/mean_service.csv",
     "format": {"type": "csv"}
   },
-  "height": 500,
-  "width": 500,
+  "height": 300,
+  "width": 300,
   "layer": [
     {
       "mark": {"type": "circle", "opacity": 0.7},

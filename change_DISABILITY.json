@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A ranged dot plot that uses 'layer' to convey changing life expectancy for the five most populous countries (between 1955 and 2000).",
+  "data": {"url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/mean_disability.csv"},
+  "transform": [
+    {
+      "filter": {
+        "field": "DISABILITY",
+        "oneOf": ["Learning disability", "Mental Health", "None", "Physical disability", "Sensory disability"]
+      }
+    },
+    {
+      "filter": {
+        "field": "first_last",
+        "oneOf": ["before", "after"]
+      }
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "mean",
+      "type": "quantitative",
+      "title": "Average Score (0-3)",
+      "scale": { "domain": [0, 3] }
+    },
+    "y": {
+      "field": "DISABILITY",
+      "type": "nominal",
+      "title": "Disability",
+      "sort": ["Sensory disability", "Mental Health", "Learning disability", "None", "Physical disability"],
+      "axis": {
+        "offset": 5,
+        "ticks": false,
+        "minExtent": 70,
+        "domain": false
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "detail": {
+          "field": "DISABILITY",
+          "type": "nominal"
+        },
+        "color": {"value": "#6f8fdb"}
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true
+      },
+      "encoding": {
+        "color": {
+          "field": "first_last",
+          "type": "ordinal",
+          "scale": {
+            "domain": ["before", "after"],
+            "range": ["#95bfe6", "#245791"]
+          },
+          "title": "Change"
+        },
+        "size": {"value": 100},
+        "opacity": {"value": 1},
+        "tooltip": [
+          {"field": "mean", "type": "quantitative", "title": "Average Score", "format": ".2f"}
+        ]
+      }
+    }
+  ],
+  "width": 300,
+  "height": 200,
+  "title": {
+    "text": "Mental Health Outcomes, by Disability Type",
+    "subtitle": "Average mental health scores, in order of biggest to smallest change.",
+    "anchor": "start",
+    "fontSize": 20,
+    "subtitleFontSize": 14
+  }
+}

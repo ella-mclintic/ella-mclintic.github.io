@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": { "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/suicidal_percent.csv"},
-  "width": 400, 
-  "height": 500, 
+  "width": 300, 
+  "height": 300, 
   "mark": "bar",
   "encoding": {
     "y": {

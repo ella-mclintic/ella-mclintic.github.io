@@ -43,8 +43,8 @@
         }
       ]
     },
-    "width": 320,
-    "height": 500,
+    "width": 300,
+    "height": 300,
     "title": {
       "text": "Impact of Suicidal Risk on Waiting Times",
       "subtitle": "Average waiting times grouped by reported suicide risk.",

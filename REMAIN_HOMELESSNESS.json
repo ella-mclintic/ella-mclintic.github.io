@@ -37,8 +37,8 @@
       {"field": "Percentage (%)", "type": "quantitative", "format": ".0f"}
     ]
   },
-  "width": 500,
-  "height": 600,
+  "width": 300,
+  "height": 300,
   "title": {
     "text": "Risk of Homelessness vs Remain on Waiting List",
     "subtitle": "Percentage of individuals wanting to remain on waiting list, by risk of homelessness.",

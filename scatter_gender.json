@@ -4,8 +4,8 @@
     "data": {
       "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/age_gender_waitingtime.csv"
     },
-    "height": 600,
-    "width": 500,
+    "height": 300,
+    "width": 300,
     "title": {
         "text": "Waiting Time, by Gender and Age",
         "subtitle": "Scatter plot of waiting time (days) and age, by gender of individal.",

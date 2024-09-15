@@ -43,8 +43,8 @@
         }
       ]
     },
-    "width": 320,
-    "height": 500,
+    "width": 300,
+    "height": 300,
     "title": {
       "text": "Impact of Being a Carer on Waiting Times",
       "subtitle": "Average waiting times grouped by whether individual is a carer.",
