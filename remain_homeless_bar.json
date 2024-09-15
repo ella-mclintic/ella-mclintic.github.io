@@ -1,0 +1,81 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Stacked bar chart showing the percentage of responses for 'remain' by 'PREGNANT' status.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/subset_cleaned_merged_SU.csv"
+    },
+    "transform": [
+      {
+        "aggregate": [{"op": "count", "as": "total_count"}],
+        "groupby": ["RISK_HOMELESSNESS", "remain"]
+      },
+      {
+        "joinaggregate": [{"op": "sum", "field": "total_count", "as": "total_per_group"}],
+        "groupby": ["RISK_HOMELESSNESS"]
+      },
+      {
+        "calculate": "datum.total_count / datum.total_per_group",
+        "as": "percentage"
+      }
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "RISK_HOMELESSNESS",
+        "type": "nominal",
+        "title": "Risk of Being Homeless"
+      },
+      "y": {
+        "field": "percentage",
+        "type": "quantitative",
+        "title": "Percentage",
+        "axis": {"format": "%"}
+      },
+      "color": {
+        "field": "remain",
+        "type": "nominal",
+        "legend": {
+          "title": "Remain",
+          "labelExpr": "datum.value == '1' ? 'yes' : 'no'"
+        },
+        "scale": {
+          "domain": ["1", "0"],
+          "range": ["#1f77b4", "#aec7e8"]
+        }
+      },
+      "tooltip": [
+        {
+          "field": "RISK_HOMELESSNESS",
+          "type": "nominal",
+          "title": "Homelessness"
+        },
+        {
+          "field": "remain",
+          "type": "nominal",
+          "title": "Remain"
+        },
+        {
+          "field": "percentage",
+          "type": "quantitative",
+          "title": "Percentage",
+          "format": ".2%"
+        }
+      ]
+    },
+    "config": {
+      "axisY": {
+        "format": ".2%"
+      }
+    },
+    "width": 300,
+    "height": 500,
+    "title": {
+      "text": "Remain on Waiting List and Homelessness",
+      "subtitle": "Percentage response for 'remain' grouped by risk of homelessness.",
+      "anchor": "start",
+      "fontSize": 20,
+      "subtitleFontSize": 14
+    }
+  }
+  
+  

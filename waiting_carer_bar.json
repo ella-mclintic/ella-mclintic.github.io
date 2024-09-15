@@ -1,0 +1,56 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bar chart showing the average waiting time by presence of a carer over six months.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/merged_SU_new_columns.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "CARER_OVER_SIX_MONTHS",
+        "type": "nominal",
+        "title": "Carer"
+      },
+      "y": {
+        "aggregate": "average",
+        "field": "waiting_time",
+        "type": "quantitative",
+        "title": "Average Waiting Time (days)"
+      },
+      "color": {
+        "field": "CARER_OVER_SIX_MONTHS",
+        "type": "nominal",
+        "legend": {
+          "title": "Carer"
+        },
+        "scale": {
+          "domain": ["Yes", "No"],
+          "range": ["#aec7e8", "#1f77b4"]
+        }
+      },
+      "tooltip": [
+        {
+          "field": "CARER_OVER_SIX_MONTHS",
+          "type": "nominal",
+          "title": "Carer"
+        },
+        {
+          "field": "waiting_time",
+          "type": "quantitative",
+          "aggregate": "average",
+          "title": "Average Waiting Time",
+          "format": ".2f"
+        }
+      ]
+    },
+    "width": 320,
+    "height": 500,
+    "title": {
+      "text": "Impact of Being a Carer on Waiting Times",
+      "subtitle": "Average waiting times grouped by whether individual is a carer.",
+      "anchor": "start",
+      "fontSize": 20,
+      "subtitleFontSize": 14
+    }
+  }
+  

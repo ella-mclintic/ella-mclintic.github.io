@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A ranged dot plot that uses 'layer' to convey changing life expectancy for the five most populous countries (between 1955 and 2000).",
+  "data": {"url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/mean_data.csv"},
+  "transform": [
+    {
+      "filter": {
+        "field": "country",
+        "oneOf": ["safe home", "look after children", "safe place to live", "non prescription drugs", "alcohol", "benefits", "manage suicidal thoughts", "enough money", "voluntary work", "new skills", "not to blame", "personal safety", "manage physical health", "healthy choices", "support from family", "say no", "positive future", "manage panic attacks", "manage mental health", "respect myself", "confident on streets", "support from friends", "part of community", "like myself"]
+      }
+    },
+    {
+      "filter": {
+        "field": "year",
+        "oneOf": ["before", "after"]
+      }
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "life_expect",
+      "type": "quantitative",
+      "title": "Average Score (0-3)",
+      "scale": { "domain": [0, 3] }
+    },
+    "y": {
+      "field": "country",
+      "type": "nominal",
+      "title": "Question",
+      "sort": ["not to blame", "respect myself", "manage panic attacks", "like myself", "positive future", "say no", "manage mental health", "personal safety", "healthy choices", "part of community", "manage suicidal thoughts", "voluntary work", "new skills", "safe place to live", "confident on streets", "support from family", "alcohol", "manage physical health", "look after children", "safe home", "enough money", "non prescription drugs", "benefits", "support from friends"],
+      "axis": {
+        "offset": 5,
+        "ticks": false,
+        "minExtent": 70,
+        "domain": false
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "detail": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "color": {"value": "#db646f"}
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true
+      },
+      "encoding": {
+        "color": {
+          "field": "year",
+          "type": "ordinal",
+          "scale": {
+            "domain": ["before", "after"],
+            "range": ["#e6959c", "#911a24"]
+          },
+          "title": "Change"
+        },
+        "size": {"value": 100},
+        "opacity": {"value": 1},
+        "tooltip": [
+          {"field": "life_expect", "type": "quantitative", "title": "Average Score", "format": ".2f"}
+        ]
+      }
+    }
+  ],
+  "width": 500,
+  "title": {
+    "text": "Before and After using Devon Rape Crisis' Services",
+    "subtitle": "Change between mean scores, by question.",
+    "anchor": "start",
+    "fontSize": 20,
+    "subtitleFontSize": 14
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": { "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/suicidal_percent.csv"},
+  "width": 400, 
+  "height": 500, 
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "percentage",
+      "type": "quantitative",
+      "title": "Percentage",
+      "stack": "normalize"
+    },
+    "x": {
+      "field": "waiting_time_group",
+      "type": "ordinal",
+      "axis": {"title": "Waiting Time (days)"}
+    },
+    "color": {
+      "field": "suicidal",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Yes", "No"],
+        "range": ["#2ca02c", "#98df8a"]
+      }
+    },
+    "tooltip": [
+      {"field": "waiting_time_group", "type": "ordinal", "title": "Waiting Time Group"},
+      {"field": "suicidal", "type": "nominal", "title": "Suicidal"},
+      {"field": "percentage", "type": "quantitative", "title": "Percentage", "format": ".0f"}
+    ]
+  },
+  "title": {
+      "text": "Effect of Waiting Time on Risk of Suicide",
+      "subtitle": "Percentage of suicidal individuals, by waiting time group.",
+      "anchor": "start",
+      "fontSize": 20,
+      "subtitleFontSize": 14
+    }
+}

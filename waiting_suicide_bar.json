@@ -1,0 +1,56 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bar chart showing the average waiting time by risk of suicide, visualized similarly to a comparison of risk of homelessness and remaining on a waiting list.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/merged_SU_new_columns.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "RISK_SUICIDIAL_THOUGHTS",
+        "type": "nominal",
+        "title": "Risk of Suicidal Thoughts"
+      },
+      "y": {
+        "aggregate": "average",
+        "field": "waiting_time",
+        "type": "quantitative",
+        "title": "Average Waiting Time (days)"
+      },
+      "color": {
+        "field": "RISK_SUICIDIAL_THOUGHTS",
+        "type": "nominal",
+        "legend": {
+          "title": "Risk of Suicidal Thoughts"
+        },
+        "scale": {
+          "domain": ["Yes", "No"],
+          "range": ["#c7aee8", "#6a1f77"]
+        }
+      },
+      "tooltip": [
+        {
+          "field": "RISK_SUICIDIAL_THOUGHTS",
+          "type": "nominal",
+          "title": "Risk of Suicidal Thoughts"
+        },
+        {
+          "field": "waiting_time",
+          "type": "quantitative",
+          "aggregate": "average",
+          "title": "Average Waiting Time",
+          "format": ".2f"
+        }
+      ]
+    },
+    "width": 320,
+    "height": 500,
+    "title": {
+      "text": "Impact of Suicidal Risk on Waiting Times",
+      "subtitle": "Average waiting times grouped by reported suicide risk.",
+      "anchor": "start",
+      "fontSize": 20,
+      "subtitleFontSize": 14
+    }
+  }
+  

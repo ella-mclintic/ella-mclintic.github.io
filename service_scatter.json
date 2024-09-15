@@ -1,0 +1,79 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Change in Mental Health, by Service",
+    "subtitle": ["Mean mental health score, before and after service. Points above 45° line indicate positive change."," "],
+    "anchor": "start",
+    "fontSize": 20,
+    "subtitleFontSize": 14
+  },
+  "config": {"background": "white", "view": {"stroke": "transparent"}},
+  "data": {
+    "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/mean_service.csv",
+    "format": {"type": "csv"}
+  },
+  "height": 500,
+  "width": 500,
+  "layer": [
+    {
+      "mark": {"type": "circle", "opacity": 0.7},
+      "encoding": {
+        "x": {
+          "field": "first",
+          "type": "quantitative",
+          "scale": {"domain": [0.6, 2.2]},
+          "axis": {"grid": false},
+          "title": "Before"
+        },
+        "y": {
+          "field": "last",
+          "type": "quantitative",
+          "scale": {"domain": [0.6, 2.2]},
+          "axis": {"grid": false},
+          "title": "After"
+        },
+        "size": {
+          "field": "count",
+          "type": "quantitative",
+          "title": "Prison Rate",
+          "scale": {"range": [20, 13900]},
+          "legend": null
+        },
+        "color": {
+          "field": "serv_type_name",
+          "type": "nominal",
+          "scale": {
+            "range": ["#1f77b4", "#aec7e8", "#ff7f0e", "#ffbb78", "#2ca02c", "#98df8a", "#d62728", "#ff9896", "#6a1f77", "#c7aee8"]
+          },
+          "legend": {
+            "title": "Service Type",
+            "orient": "right",
+            "labelLimit": 200, 
+            "titleLimit": 80,
+            "padding": 30
+          }
+        },
+        "tooltip": [
+          {"field": "serv_type_name", "type": "ordinal", "title": "Service"},
+          {"field": "first", "type": "quantitative", "title": "Before", "format": ".2f"},
+          {"field": "last", "type": "quantitative", "title": "After", "format": ".2f"},
+          {"field": "count", "type": "quantitative", "title": "Count", "format": ","}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [{"x": 0.6, "y": 0.6}, {"x": 2.2, "y": 2.2}]
+      },
+      "mark": {
+        "type": "line",
+        "strokeDash": [7, 8],
+        "color": "lightgrey"
+      },
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": {"field": "y", "type": "quantitative"}
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "values": [
+      {"Risk of Homelessness":"Yes", "Remain": "No", "Percentage (%)": 25},
+      {"Risk of Homelessness":"Yes", "Remain": "Yes", "Percentage (%)": 75},
+      {"Risk of Homelessness":"No", "Remain": "No", "Percentage (%)": 5.51470588235294},
+      {"Risk of Homelessness":"No", "Remain": "Yes", "Percentage (%)": 94.48529411764706}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Risk of Homelessness",
+      "type": "nominal"
+    },
+    "y": {
+      "field": "Percentage (%)",
+      "type": "quantitative",
+      "title": "Percentage (%)"
+    },
+    "xOffset": {
+      "field": "Remain",
+      "type": "nominal"
+    },
+    "color": {
+      "field": "Remain",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Yes", "No"],
+        "range": ["#F08000", "#0096FF"]
+      }
+    },
+    "tooltip": [
+      {"field": "Risk of Homelessness", "type": "nominal"},
+      {"field": "Remain", "type": "nominal"},
+      {"field": "Percentage (%)", "type": "quantitative", "format": ".0f"}
+    ]
+  },
+  "width": 500,
+  "height": 600,
+  "title": {
+    "text": "Risk of Homelessness vs Remain on Waiting List",
+    "subtitle": "Percentage of individuals wanting to remain on waiting list, by risk of homelessness.",
+    "anchor": "start",
+    "fontSize": 20,
+    "subtitleFontSize": 14
+  }
+}

@@ -1,0 +1,113 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A scatterplot showing body mass and flipper lengths of penguins, with interactive highlighting and slope annotations.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/age_gender_waitingtime.csv"
+    },
+    "height": 600,
+    "width": 500,
+    "title": {
+        "text": "Waiting Time, by Gender and Age",
+        "subtitle": "Scatter plot of waiting time (days) and age, by gender of individal.",
+        "anchor": "start",
+        "fontSize": 20,
+        "subtitleFontSize": 14
+      },
+    "layer": [
+      {
+        "mark": "point",
+        "encoding": {
+          "x": {
+            "field": "age",
+            "type": "quantitative",
+            "scale": {"zero": false}
+          },
+          "y": {
+            "field": "waiting time",
+            "type": "quantitative",
+            "scale": {"zero": false}
+          },
+          "color": {
+            "condition": {
+              "selection": "hover",
+              "field": "gender",
+              "type": "nominal",
+              "scale": {
+                "domain": ["Female", "Male"],
+                "range": ["#F08000", "#0096FF"]
+              }
+            },
+            "value": "grey"
+          },
+          "shape": {
+            "field": "gender",
+            "type": "nominal"
+          },
+          "opacity": {
+            "condition": {"selection": "hover", "value": 1},
+            "value": 0.4
+          }
+        },
+        "selection": {
+          "hover": {
+            "type": "single",
+            "on": "mouseover",
+            "empty": "none",
+            "fields": ["gender"]
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "regression": "waiting time",
+            "on": "age",
+            "groupby": ["gender"]
+          }
+        ],
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "field": "age",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "waiting time",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "gender",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Female", "Male"],
+              "range": ["#F08000", "#0096FF"]
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "values": [
+            {"gender": "Female", "slope": 0.794, "age": 85, "waiting time": 207},
+            {"gender": "Male", "slope": -1.15, "age": 74.5, "waiting time": 137}
+          ]
+        },
+        "mark": "text",
+        "encoding": {
+          "x": {"field": "age", "type": "quantitative"},
+          "y": {"field": "waiting time", "type": "quantitative"},
+          "text": {"field": "slope", "type": "quantitative", "format": ".2f"},
+          "color": {
+            "field": "gender",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Female", "Male"],
+              "range": ["#F08000", "#0096FF"]
+            }
+          }
+        }
+      }
+    ]
+  }
+  
+  

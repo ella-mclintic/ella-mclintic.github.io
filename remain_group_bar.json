@@ -1,0 +1,86 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Stacked bar chart showing the percentage of responses for 'remain' by 'interest_in_groups' status.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/subset_cleaned_merged_SU.csv"
+    },
+    "transform": [
+      {
+        "filter": "datum.interest_in_groups == '1' || datum.interest_in_groups == '0'"
+      },
+      {
+        "aggregate": [{"op": "count", "as": "total_count"}],
+        "groupby": ["interest_in_groups", "remain"]
+      },
+      {
+        "joinaggregate": [{"op": "sum", "field": "total_count", "as": "total_per_group"}],
+        "groupby": ["interest_in_groups"]
+      },
+      {
+        "calculate": "datum.total_count / datum.total_per_group",
+        "as": "percentage"
+      }
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "interest_in_groups",
+        "type": "nominal",
+        "title": "Interest in Groups",
+        "axis": {
+          "labelExpr": "datum.value == '1' ? 'Yes' : 'No'"
+        }
+      },
+      "y": {
+        "field": "percentage",
+        "type": "quantitative",
+        "title": "Percentage",
+        "axis": {"format": "%"}
+      },
+      "color": {
+        "field": "remain",
+        "type": "nominal",
+        "legend": {
+          "title": "Remain",
+          "labelExpr": "datum.value == '1' ? 'Yes' : 'No'"
+        },
+        "scale": {
+          "domain": ["1", "0"],
+          "range": ["#6a1f77", "#c7aee8"]
+        }
+      },
+      "tooltip": [
+        {
+          "field": "interest_in_groups",
+          "type": "nominal",
+          "title": "Interest in Groups"
+        },
+        {
+          "field": "remain",
+          "type": "nominal",
+          "title": "Remain"
+        },
+        {
+          "field": "percentage",
+          "type": "quantitative",
+          "title": "Percentage",
+          "format": ".2%"
+        }
+      ]
+    },
+    "config": {
+      "axisY": {
+        "format": ".0%"
+      }
+    },
+    "width": 300,
+    "height": 500,
+    "title": {
+      "text": "Staying on Waiting List by Interest in Groups",
+      "subtitle": "Percentage response for 'remain', by whether individual is interest in group work.",
+      "anchor": "start",
+      "fontSize": 20,
+      "subtitleFontSize": 14
+    }
+  }
+  

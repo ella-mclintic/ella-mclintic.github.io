@@ -1,0 +1,81 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Stacked bar chart showing the percentage of responses for 'remain' by 'PREGNANT' status.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/subset_cleaned_merged_SU.csv"
+    },
+    "transform": [
+      {
+        "aggregate": [{"op": "count", "as": "total_count"}],
+        "groupby": ["PREGNANT", "remain"]
+      },
+      {
+        "joinaggregate": [{"op": "sum", "field": "total_count", "as": "total_per_group"}],
+        "groupby": ["PREGNANT"]
+      },
+      {
+        "calculate": "datum.total_count / datum.total_per_group",
+        "as": "percentage"
+      }
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "PREGNANT",
+        "type": "nominal",
+        "title": "Pregnant"
+      },
+      "y": {
+        "field": "percentage",
+        "type": "quantitative",
+        "title": "Percentage",
+        "axis": {"format": "%"}
+      },
+      "color": {
+        "field": "remain",
+        "type": "nominal",
+        "legend": {
+          "title": "Remain",
+          "labelExpr": "datum.value == '1' ? 'Yes' : 'No'"
+        },
+        "scale": {
+          "domain": ["1", "0"],
+          "range": ["#ff7f0e", "#ffbb78"]
+        }
+      },
+      "tooltip": [
+        {
+          "field": "PREGNANT",
+          "type": "nominal",
+          "title": "Pregnant"
+        },
+        {
+          "field": "remain",
+          "type": "nominal",
+          "title": "Remain"
+        },
+        {
+          "field": "percentage",
+          "type": "quantitative",
+          "title": "Percentage",
+          "format": ".2%"
+        }
+      ]
+    },
+    "config": {
+      "axisY": {
+        "format": ".0%"
+      }
+    },
+    "width": 300,
+    "height": 500,
+    "title": {
+      "text": "Remain on Waiting List and Pregnancy",
+      "subtitle": "Percentage response for 'remain' grouped by pregnancy status.",
+      "anchor": "start",
+      "fontSize": 20,
+      "subtitleFontSize": 14
+    }
+  }
+  
+  
