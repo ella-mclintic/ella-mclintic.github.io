@@ -21,7 +21,7 @@
       "field": "mean",
       "type": "quantitative",
       "title": "Average Score (0-3)",
-      "scale": { "domain": [0, 3] }
+      "scale": { "domain": [1, 2] }
     },
     "y": {
       "field": "DISABILITY",
@@ -62,7 +62,7 @@
           },
           "title": "Change"
         },
-        "size": {"value": 100},
+        "size": {"value": 80},
         "opacity": {"value": 1},
         "tooltip": [
           {"field": "mean", "type": "quantitative", "title": "Average Score", "format": ".2f"}
@@ -70,13 +70,12 @@
       }
     }
   ],
-  "width": 300,
-  "height": 200,
+  "width": 200,
+  "height": 250,
   "title": {
     "text": "Mental Health Outcomes, by Disability Type",
     "subtitle": "Average mental health scores, in order of biggest to smallest change.",
     "anchor": "start",
-    "fontSize": 20,
-    "subtitleFontSize": 14
+    "subtitleFontSize": 10
   }
 }

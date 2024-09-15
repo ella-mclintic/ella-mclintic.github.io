@@ -4,16 +4,15 @@
     "text": "Change in Mental Health, by Service",
     "subtitle": ["Mean mental health score, before and after service. Points above 45° line indicate positive change."," "],
     "anchor": "start",
-    "fontSize": 20,
-    "subtitleFontSize": 14
+    "subtitleFontSize": 10
   },
   "config": {"background": "white", "view": {"stroke": "transparent"}},
   "data": {
     "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/mean_service.csv",
     "format": {"type": "csv"}
   },
-  "height": 300,
-  "width": 300,
+  "height": 200,
+  "width": 200,
   "layer": [
     {
       "mark": {"type": "circle", "opacity": 0.7},
@@ -36,7 +35,7 @@
           "field": "count",
           "type": "quantitative",
           "title": "Prison Rate",
-          "scale": {"range": [20, 13900]},
+          "scale": {"range": [5, 3475]},
           "legend": null
         },
         "color": {
@@ -49,8 +48,8 @@
             "title": "Service Type",
             "orient": "right",
             "labelLimit": 200, 
-            "titleLimit": 80,
-            "padding": 30
+            "titleLimit": 70,
+            "padding": 10
           }
         },
         "tooltip": [

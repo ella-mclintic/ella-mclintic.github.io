@@ -4,8 +4,7 @@
     "text": "Confidence on the Street, by Location of Incident",
     "subtitle": ["Mean confidence on the streets score, before and after service.", "Points above 45° line indicate positive change.", " "],
     "anchor": "start",
-    "fontSize": 20,
-    "subtitleFontSize": 14
+    "subtitleFontSize": 10
   },
   "config": {
     "background": "white",
@@ -24,8 +23,8 @@
       "filter": "datum.LOCATION_GROUP !== 'Residential Institution'"
     }
   ],
-  "height": 300,
-  "width": 300,
+  "height": 200,
+  "width": 200,
   "layer": [
     {
       "mark": {
@@ -60,7 +59,7 @@
           "type": "quantitative",
           "title": "Prison Rate",
           "scale": {
-            "range": [20, 13900]
+            "range": [5, 3475]
           },
           "legend": null
         },
@@ -85,7 +84,7 @@
             "orient": "right",
             "labelLimit": 200,
             "titleLimit": 80,
-            "padding": 30
+            "padding": 10
           }
         },
         "order": {

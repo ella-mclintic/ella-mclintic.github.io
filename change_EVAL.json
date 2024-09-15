@@ -21,7 +21,7 @@
       "field": "life_expect",
       "type": "quantitative",
       "title": "Average Score (0-3)",
-      "scale": { "domain": [0, 3] }
+      "scale": { "domain": [0.8, 3] }
     },
     "y": {
       "field": "country",
@@ -62,7 +62,7 @@
           },
           "title": "Change"
         },
-        "size": {"value": 100},
+        "size": {"value": 50},
         "opacity": {"value": 1},
         "tooltip": [
           {"field": "life_expect", "type": "quantitative", "title": "Average Score", "format": ".2f"}
@@ -70,13 +70,12 @@
       }
     }
   ],
-  "width": 300,
+  "width": 220,
   "height": 300,
   "title": {
     "text": "Before and After using Devon Rape Crisis' Services",
-    "subtitle": "Change between mean scores, by question.",
+    "subtitle": ["Change between mean scores, by question."," "],
     "anchor": "start",
-    "fontSize": 20,
-    "subtitleFontSize": 14
+    "subtitleFontSize": 10
   }
 }

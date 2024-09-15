@@ -67,14 +67,13 @@
         "format": ".0%"
       }
     },
-    "width": 300,
+    "width": 200,
     "height": 300,
     "title": {
       "text": "Remain on Waiting List and Pregnancy",
       "subtitle": "Percentage response for 'remain' grouped by pregnancy status.",
       "anchor": "start",
-      "fontSize": 20,
-      "subtitleFontSize": 14
+      "subtitleFontSize": 10
     }
   }
   

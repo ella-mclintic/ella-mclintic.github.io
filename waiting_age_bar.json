@@ -1,57 +1,55 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A bar chart showing the average waiting time by age range.",
-    "data": {
-      "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/merged_SU_new_columns.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A bar chart showing the average waiting time by age range.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/merged_SU_new_columns.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "SU_AGE_RANGE",
+      "type": "nominal",
+      "title": "Age Group",
+      "sort": ["Teens", "20s", "30s", "40s", "50s", "60s", "70s", "80+"]
     },
-    "mark": "bar",
-    "encoding": {
-      "x": {
+    "y": {
+      "aggregate": "average",
+      "field": "waiting_time",
+      "type": "quantitative",
+      "title": "Average Waiting Time (days)"
+    },
+    "color": {
+      "field": "SU_AGE_RANGE",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Teens", "20s", "30s", "40s", "50s", "60s", "70s", "80+"],
+        "range": ["#1f77b4", "#aec7e8", "#ff7f0e", "#ffbb78", "#2ca02c", "#98df8a", "#d62728", "#ff9896"]
+      },
+      "legend": {
+        "title": "Age Group"
+      }
+    },
+    "tooltip": [
+      {
         "field": "SU_AGE_RANGE",
         "type": "nominal",
-        "title": "Age Group",
-        "sort": ["Teens", "20s", "30s", "40s", "50s", "60s", "70s", "80+"]
+        "title": "Age Group"
       },
-      "y": {
-        "aggregate": "average",
+      {
         "field": "waiting_time",
         "type": "quantitative",
-        "title": "Average Waiting Time (days)"
-      },
-      "color": {
-        "field": "SU_AGE_RANGE",
-        "type": "nominal",
-        "scale": {
-          "domain": ["Teens", "20s", "30s", "40s", "50s", "60s", "70s", "80+"],
-          "range": ["#1f77b4", "#aec7e8", "#ff7f0e", "#ffbb78", "#2ca02c", "#98df8a", "#d62728", "#ff9896"]
-        },
-        "legend": {
-          "title": "Age Group"
-        }
-      },
-      "tooltip": [
-        {
-          "field": "SU_AGE_RANGE",
-          "type": "nominal",
-          "title": "Age Group"
-        },
-        {
-          "field": "waiting_time",
-          "type": "quantitative",
-          "aggregate": "average",
-          "title": "Average Waiting Time",
-          "format": ".2f"
-        }
-      ]
-    },
-    "width": 300,
-    "height": 300,
-    "title": {
-      "text": "Impact of Age on Waiting Times",
-      "subtitle": "Average waiting times grouped by age range.",
-      "anchor": "start",
-      "fontSize": 20,
-      "subtitleFontSize": 14
-    }
+        "aggregate": "average",
+        "title": "Average Waiting Time",
+        "format": ".2f"
+      }
+    ]
+  },
+  "width": 200,
+  "height": 300,
+  "title": {
+    "text": "Impact of Age on Waiting Times",
+    "subtitle": "Average waiting times grouped by age range.",
+    "anchor": "start",
+    "subtitleFontSize": 10
   }
-  
+}
