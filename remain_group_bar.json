@@ -77,7 +77,7 @@
   "height": 300,
   "title": {
     "text": "Staying on Waiting List by Interest in Groups",
-    "subtitle": "Percentage response for 'remain', by whether individual is interest in group work.",
+    "subtitle": "Percentage response for 'remain', by if individual is interest in group work.",
     "anchor": "start",
     "subtitleFontSize": 10
   }
