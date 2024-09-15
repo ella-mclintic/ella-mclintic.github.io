@@ -27,7 +27,7 @@
     <link rel="apple-touch-icon" href="images/favicon.png" />
     
     <!--Title -->
-    <title>Rapid Prices</title>
+    <title>DRCSAS Dashboard</title>
     
     <!--Main Stylesheet-->
     <link rel="stylesheet" href="main2.css">
@@ -46,15 +46,15 @@
 
 
 
-<!-- <body onload="myFunction()" style="margin:0;"> -->
+<body onload="myFunction()" style="margin:0;">
 
 <body>
 
 
 
 
-<!--Div with the loader ///////////////////////////////////// -->
-    <!-- <div id="loader" class="loader">
+
+    <div id="loader" class="loader">
         
         <svg id="preloader" width="240px" height="120px" viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <path id="loop-normal" class="st1" d="M120.5,60.5L146.48,87.02c14.64,14.64,38.39,14.65,53.03,0s14.64-38.39,0-53.03s-38.39-14.65-53.03,0L120.5,60.5
@@ -68,9 +68,10 @@
         </svg>
         
         <div class="credit">
-            <a href="https://nuggetcharts.com" target="_blank">fetching live data</a>
+            <a href="https://nuggetcharts.com" target="_blank">loading data</a>
         </div>
-     </div> -->
+     </div>
+
 <!--End of loader /////////////////////////////////// -->
 
 
@@ -112,7 +113,7 @@
 
 
 <script>
-    // Set the charts that we want on the page as variables, linking them to JSON files:
+    // Set the charts on the page as variables, linking them to JSON files:
     var inf1 = "remain_group_bar.json";
     var inf2 = "remain_homeless_bar.json";
     var inf3 = "remain_pregnant_bar.json";
@@ -126,7 +127,7 @@
     var inf11 = "suicidal_percentage.json";
    
 
-    // Now embed the charts in the divs set above:
+    // embed charts in the divs above:
     vegaEmbed('#chart1', inf1, {"actions": false});   
     vegaEmbed('#chart2', inf2, {"actions": false});
     vegaEmbed('#chart3', inf3, {"actions": false});   
