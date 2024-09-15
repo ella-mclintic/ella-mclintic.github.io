@@ -53,12 +53,16 @@ body {
   margin:auto;
   box-sizing: border-box;
 }
+.custom_gap {
+    margin-bottom: 20px;
+  }
 .grid_items > div:nth-child(3n + 2) {
   background-color: #ffffff;
 }
 .grid_items > div:nth-child(3n) {
   background-color: #ffffff;
 }
+
 
 
 /* ------------------------------------------------------------------------------
