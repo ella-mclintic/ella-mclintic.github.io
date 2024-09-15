@@ -48,8 +48,10 @@ body {
   background-color: #ffffff;
   padding: 5px;
   border-radius: 10px;
-  width: 360px;
+  min-width: 360px;
+  width: auto;
   margin:auto;
+  box-sizing: border-box;
 }
 .grid_items > div:nth-child(3n + 2) {
   background-color: #ffffff;

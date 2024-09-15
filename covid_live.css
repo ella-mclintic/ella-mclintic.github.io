@@ -42,12 +42,14 @@ body {
   grid-row-gap: 20px;
 }
 .grid_items > div {
-  background-color: #ffffff;
-  padding: 5px;
-  border-radius: 10px;
-  width: 360px;
-  margin:auto;
-}
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    min-width: 360px;
+    width: auto;
+    margin:auto;
+    box-sizing: border-box;
+  }
 .grid_items > div:nth-child(3n + 2) {
   background-color: #ffffff;
 }
