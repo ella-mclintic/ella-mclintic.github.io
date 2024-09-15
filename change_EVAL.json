@@ -32,7 +32,8 @@
         "offset": 5,
         "ticks": false,
         "minExtent": 70,
-        "domain": false
+        "domain": false,
+        "labelFontSize": 9
       }
     }
   },
@@ -70,11 +71,11 @@
       }
     }
   ],
-  "width": 220,
+  "width": 210,
   "height": 300,
   "title": {
     "text": "Before and After using Devon Rape Crisis' Services",
-    "subtitle": ["Change between mean scores, by question."," "],
+    "subtitle": ["Change between mean scores, by question.", " "],
     "anchor": "start",
     "subtitleFontSize": 10
   }
