@@ -70,7 +70,8 @@
       }
     }
   ],
-  "width": 500,
+  "width": 300,
+  "height": 300,
   "title": {
     "text": "Before and After using Devon Rape Crisis' Services",
     "subtitle": "Change between mean scores, by question.",

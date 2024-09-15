@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": { "url": "https://raw.githubusercontent.com/ella-mclintic/ella-mclintic.github.io/main/suicidal_percent.csv"},
-  "width": 300, 
+  "width": 200, 
   "height": 300, 
   "mark": "bar",
   "encoding": {
@@ -34,7 +34,6 @@
       "text": "Effect of Waiting Time on Risk of Suicide",
       "subtitle": "Percentage of suicidal individuals, by waiting time group.",
       "anchor": "start",
-      "fontSize": 20,
-      "subtitleFontSize": 14
+      "subtitleFontSize": 10
     }
 }
