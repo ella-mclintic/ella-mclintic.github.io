@@ -63,6 +63,18 @@ body {
   background-color: #ffffff;
 }
 
+/* Button styles */
+[id^="link"] {
+    padding: 10px;
+    background-color: #9d4edd;
+    border: 2px solid #5a189a;
+    font-weight: bold;
+}
+
+[id^="link"]:hover {
+    background-color: #7b2cbf;
+    border-color: #4a148c;
+}
 
 
 /* ------------------------------------------------------------------------------
