@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Figure 3: Example time series</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Highcharts core + useful modules -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 0; }
+    .wrapper { padding: 16px; max-width: 900px; margin: 0 auto; }
+    .source { font-size: 0.9rem; color: #444; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1 id="fig-title">Figure 3: Example time series</h1>
+    <div id="chart" aria-labelledby="fig-title"></div>
+    <p class="source">Source: Example dataset</p>
+  </div>
+
+  <script>
+    // Example monthly data: [Date.UTC(year, monthIndex), value]
+    const seriesData = [
+      [Date.UTC(2022, 0, 1), 100],
+      [Date.UTC(2022, 1, 1), 103],
+      [Date.UTC(2022, 2, 1), 105],
+      [Date.UTC(2022, 3, 1), 104],
+      [Date.UTC(2022, 4, 1), 108],
+      [Date.UTC(2022, 5, 1), 111],
+      [Date.UTC(2022, 6, 1), 113],
+      [Date.UTC(2022, 7, 1), 115],
+      [Date.UTC(2022, 8, 1), 117],
+      [Date.UTC(2022, 9, 1), 118],
+      [Date.UTC(2022,10, 1), 119],
+      [Date.UTC(2022,11, 1), 121],
+      [Date.UTC(2023, 0, 1), 122]
+    ];
+
+    Highcharts.chart('chart', {
+      chart: { type: 'line', spacing: [16, 16, 16, 16] },
+      title: { text: null }, // Title is in the h1 for accessibility
+      subtitle: { text: 'Seasonally adjusted, Jan 2022–Jan 2023' },
+      credits: { enabled: false }, // ONS typically disable vendor credits
+      exporting: { enabled: true }, // download PNG/SVG/CSV
+      accessibility: {
+        description: 'A line chart showing a steady increase from 100 in Jan 2022 to 122 in Jan 2023.',
+        keyboardNavigation: { enabled: true }
+      },
+      xAxis: {
+        type: 'datetime',
+        tickInterval: 1000 * 60 * 60 * 24 * 30 * 2, // about 2 months
+        labels: { format: '{value:%b %Y}' }
+      },
+      yAxis: {
+        title: { text: 'Index (Jan 2022 = 100)' },
+        tickAmount: 6
+      },
+      tooltip: {
+        shared: true,
+        xDateFormat: '%b %Y',
+        valueDecimals: 0
+      },
+      series: [{
+        name: 'Index',
+        data: seriesData
+      }],
+      responsive: {
+        rules: [{
+          condition: { maxWidth: 500 },
+          chartOptions: {
+            xAxis: { labels: { format: '{value:%b \'%y}' } },
+            yAxis: { tickAmount: 4 }
+          }
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
